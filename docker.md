@@ -142,5 +142,5 @@ production:
  13. go to dockerhub and see if your image is there.
  
  ## Helpful Articles
- https://www.codewithjason.com/dockerize-rails-application/
- https://stackoverflow.com/questions/50090012/how-do-i-run-rails-in-docker-pgconnectionbad-could-not-translate-host-name-p/52179797
+ - https://www.codewithjason.com/dockerize-rails-application/
+ - https://stackoverflow.com/questions/50090012/how-do-i-run-rails-in-docker-pgconnectionbad-could-not-translate-host-name-p/52179797
