@@ -6,7 +6,7 @@
 # Steps
 ## Author: Wyatt Wicks 
 1. Create a file named docker-compose.yml within the root of your app, copy/paste the folllowing 
-
+```
 # Use the file format compatible with Docker Compose 3.8
 version: "3.8"
 
@@ -54,9 +54,9 @@ services:
 # Declare the volumes that our application uses.
 volumes:
   postgres: 
-
+```
 2. Create a file named Dockerfile within the root of your app, copy/paste the following and change as needed
-
+```
 FROM ruby:2.5.3 
 # change Ruby version to match what your app uses. 
 
@@ -75,12 +75,13 @@ RUN bundle install
 COPY . .
 
 CMD ["rails", "server", "-b", "0.0.0.0"]]
-
+```
 3. Create .your_app_name.env file in root directory, copy/paste/change. 
+ ```
   DATABASE_URL=postgresql://postgresusernamefromstep1:whateverPWYouWant@postgres:5432/app_name_or_postgres_user_name?encoding=utf8&pool=5&timeout=5000
-
+```
 4. Go to config file, find database.yml, delete what's in there and copy/paste/change the following, it will look a lot like step 1, but slightly different.
-
+```
 default: &default
   adapter: postgresql
   encoding: unicode
@@ -128,7 +129,7 @@ test:
   url: <%= ENV['DATABASE_URL'].gsub('?', '_test?' ) %>
 production:
   url: <%= ENV['DATABASE_URL'].gsub('?', '_production?' ) %>
-  
+  ```
  5. run docker-compose build in terminal
  6. run docker-compose up in terminal, ensure the server runs and you dont get errors.
  6.5 if you get errors you can try docker-compose up --remove-orphans.
